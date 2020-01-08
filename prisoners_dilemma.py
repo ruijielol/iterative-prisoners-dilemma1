@@ -1,5 +1,6 @@
-from __future__ import print_function
+# from __future__ import print_function
 
+import math as m
 ##### 
 # Computer Science and Software Engineering
 # PLTW AP CS Principles
@@ -30,14 +31,33 @@ from __future__ import print_function
 # scores, moves, reports = main_play([team1]*3+[example1])
 # section0, section1, section2, section3 = reports
 #######
+import os.path
 import random
-import os.path              
-    
-import example0, example1, example2, example3
-import example4, example5, example6, example7
-import team0, team1, team2, team3, team4
-import team5, team6, team7, team8, team9
-import team10, team11, team12, team13, team14
+
+import example0
+import example1
+import example2
+import example3
+import example4
+import example5
+import example6
+import example7
+import team0
+import team1
+import team2
+import team3
+import team4
+import team5
+import team6
+import team7
+import team8
+import team9
+import team10
+import team11
+import team12
+import team13
+import team14
+
 betray = example1
 collude = example0
 
@@ -45,8 +65,8 @@ modules = [example0, example1, example2, example3, example4, example5, example6,
 team0, team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, 
 team11, team12, team13, team14]
 for module in modules:
-    reload(module)
-    print ('reloaded',module)
+    # reload(module)
+    # print ('reloaded',module)
     for required_variable in ['team_name', 'strategy_name', 'strategy_description']:
         if not hasattr(module, required_variable):
             setattr(module, required_variable, 'missing assignment')
@@ -240,13 +260,13 @@ def make_section1(modules, scores):
     for index in range(len(modules)):
         section1 += 'vs. P' + str(index) + ' :'
         for i in range(len(modules)):
-            section1 += '{:>7}'.format(scores[i][index])
+            section1 += '{:>7}'.format(int(float(scores[i][index])))
         section1 += '\n'
 
     # Last line
     section1 += 'TOTAL  :'
     for index in range(len(modules)):
-        section1 += '{:>7}'.format(sum(scores[index]))     
+        section1 += '{:>7}'.format(sum([int(float(i)) for i in scores[index]]))
     return section1+'\n'
     
 def make_section2(modules, scores):
@@ -270,13 +290,13 @@ def make_section2(modules, scores):
                               'P'+str(index),
                               str(sum(scores[index])/len(modules)),
                               str(modules[index].strategy_name)))
-    section2_list.sort(key=lambda x: int(x[2]), reverse=True)
+    section2_list.sort(key=lambda x: int(float(x[2])), reverse=True)
     
     # Generate one string per team
     # Rockettes (P1):  -500 points with Backstabber
     for team in section2_list:
         team_name, Pn, n_points, strategy_name = team
-        section2 += '{:<10}({}): {:>10} points with {:<40}\n'.format(team_name[:10], Pn, n_points, strategy_name[:40])                       
+        section2 += '{:<10}({}): {:>10} points with {:<40}\n'.format(team_name[:10], Pn, int(float(n_points)), strategy_name[:40])                       
     return section2 
     
 def make_section3(modules, moves, scores, index):
