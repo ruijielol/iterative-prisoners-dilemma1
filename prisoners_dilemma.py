@@ -1,6 +1,3 @@
-# from __future__ import print_function
-
-import math as m
 #####
 # Computer Science and Software Engineering
 # PLTW AP CS Principles
