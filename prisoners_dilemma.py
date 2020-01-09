@@ -42,21 +42,21 @@ import example4
 import example5
 import example6
 import example7
-import team0
-import team1
-import team2
-import team3
-import team4
-import team5
-import team6
-import team7
-import team8
-import team9
-import team10
-import team11
-import team12
-import team13
-import team14
+from period5 import team0
+from period5 import team1
+from period5 import team2
+from period5 import team3
+from period5 import team4
+from period5 import team5
+from period5 import team6
+from period5 import team7
+from period5 import team8
+from period5 import team9
+from period5 import team10
+from period5 import team11
+from period5 import team12
+from period5 import team13
+from period5 import team14
 
 betray = example1
 collude = example0
@@ -356,7 +356,7 @@ def make_code_string(modules):
     code += 'Code of each player\'s algorithm\n'
     code = '-'*80 + '\n'
     for index in range(len(modules)):
-        players_code_filename = str(modules[index]).split(' ')[1].replace('\'','')
+        players_code_filename = str(modules[index]).split(' ')[1].replace('\'','').replace('.',os.path.sep)
         directory = os.path.dirname(os.path.abspath(__file__))  
         filename = os.path.join(directory, players_code_filename)
         players_code_file = open(filename+'.py', 'r')
