@@ -31,6 +31,7 @@
 import os.path
 import random
 
+#examples and teams now in separate folder
 from examples import (example0, example1, example2, example3, example4,
                       example5, example6, example7, example8)
 from period5 import (team0, team1, team2, team3, team4, team5, team6, team7,
