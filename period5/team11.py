@@ -47,8 +47,6 @@ def move(my_history, their_history, my_score, their_score):
 
 if __name__ == '__main__':
      
-    return 'b'
-
     # Test 1: Betray on first move.
     if test_move(my_history='',
               their_history='', 
