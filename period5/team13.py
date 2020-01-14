@@ -44,8 +44,4 @@ def test_move(my_history, their_history, my_score, their_score, result):
             ") returned " + "'" + real_result + "'" +
             " and should have returned '" + result + "'")
         return False
-
-if __name__ == '__main__':
      
-   def move(my_history, their_history, my_score, their_score):
-   return 'b'         
